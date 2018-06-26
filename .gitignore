@@ -1,2 +1,8 @@
 /views-cache/*
+
+!/views-cache/.gitkeep
+
+
 /res/site/img/products/*
+
+!/res/site/img/products/.gitkeep
