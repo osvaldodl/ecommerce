@@ -2,36 +2,27 @@
 
 use \Hcode\Page;
 use \Hcode\Model\Category;
+use \Hcode\Model\Product;
 
 $app->config('debug', true);
 
 $app->get('/', function() {
-  
-  $page = new Page();
+  	
+  	$products = Product::listAll();
 
-  $page->setTpl("index");
+  	$page = new Page();
 
-});
-
-
-
-
-
-$app->get('/categories/:idcategory', function($idcategory){
-
-	$category = new Category();
-
-	$category->get((int)$idcategory);
-
-	$page = new Page();
-
-	$page->setTpl("category",array(
-		"category"=>$category->getValues(),
-		"products"=> array()
-	));
-
+  	$page->setTpl("index", array(
+  		"products"=>Product::checkList($products)
+  	));
 
 });
+
+
+
+
+
+
 
 
 ?>

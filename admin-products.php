@@ -83,6 +83,12 @@ $app->post('/admin/products/:idproduct', function($idproduct){
 
 	$product->setPhoto($_FILES["file"]);
 
+	// var_dump(($_FILES["file"]));
+	// exit;
+
+	// (isset($_FILES["file"]))? : null ;
+
+
 	header("Location: /admin/products");
 	exit;
 
