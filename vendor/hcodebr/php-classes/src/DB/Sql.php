@@ -19,6 +19,7 @@ class Sql {
 			Sql::USERNAME,
 			Sql::PASSWORD
 		);
+		$this->conn->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
 
 	}
 

@@ -155,9 +155,7 @@ $app->get("/admin/categories/:idcategory/products/:idproduct/remove", function($
 	$product = new Product();
 
 	$product->get((int) $idproduct);
-	// var_dump($product);
-	// var_dump($category);
-
+	
 	$category->removeProduct($product);
 
 	header("Location: /admin/categories/".$idcategory."/products");
